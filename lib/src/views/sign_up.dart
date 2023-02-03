@@ -1,3 +1,4 @@
+import 'package:demo_project/src/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -54,20 +55,8 @@ class _SignUpState extends State<SignUp> {
           children: [
             SizedBox(
               width: screenWidth,
-              child: Image.asset('assets/images/sign_up_bg.png',
-                  fit: BoxFit.cover),
+              child: Image.asset(signOutBackground, fit: BoxFit.cover),
             ),
-            // IconButton(
-            //   padding: EdgeInsets.only(top: 20),
-            //   icon: Icon(
-            //     Icons.arrow_back,
-            //     size: 30,
-            //     color: Colors.white,
-            //   ),
-            //   onPressed: () {
-            //     Navigator.pop(context);
-            //   },
-            // ),
             SingleChildScrollView(
               physics: const BouncingScrollPhysics(
                   parent: AlwaysScrollableScrollPhysics()),

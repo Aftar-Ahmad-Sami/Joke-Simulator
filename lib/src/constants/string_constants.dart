@@ -8,6 +8,7 @@ String fontFamilyInApp = 'Poppins';
 String imagePathInApp = 'images';
 String splashImagePathInAssets = 'assets/images/splash_screen.gif';
 String signInBackground = 'assets/images/sign_in_bg.png';
+String signOutBackground = 'assets/images/sign_up_bg.png';
 
 String joke = "";
 String twopart = "";

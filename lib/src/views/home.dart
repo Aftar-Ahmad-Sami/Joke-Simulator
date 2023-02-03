@@ -6,6 +6,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/object_constants.dart';
+import '../constants/search_info_constants.dart';
 import '../constants/string_constants.dart';
 import '../components/all_snackbars.dart';
 import 'sign_in.dart';
@@ -45,31 +46,6 @@ class _HomeState extends State<Home> {
   }
 
   bool loadingState = false;
-  String x = "Any";
-
-  //Firebase Info Fetch
-//  String? email = FirebaseAuth.instance.currentUser!.email!;
-
-  String initialCategoryValue = 'Any';
-  String initialCategoryCustomValue = "Programming";
-  var categoryItems = ['Any', 'Custom'];
-  var categoryCustomItems = [
-    'Programming',
-    'Misc',
-    'Dark',
-    'Pun',
-  ];
-
-  String initialLanguageValue = 'en - English';
-  var languageItems = [
-    'en - English',
-    'cs - Czech',
-    'es - Spanish',
-    'de - German',
-  ];
-
-  String initialJokeValue = 'single';
-  var jokeItems = ['single', 'twopart'];
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +54,6 @@ class _HomeState extends State<Home> {
     return xp == true
         ? const Center(child: CustomCircularProgress())
         : Scaffold(
-            //backgroundColor: Color.fromARGB(255, 73, 71, 71),
             extendBodyBehindAppBar: true,
             drawer: const CustomJokeDrawer(),
             appBar: AppBar(
@@ -295,13 +270,6 @@ class _HomeState extends State<Home> {
                                       "https://v2.jokeapi.dev/joke/$x?lang=${initialLanguageValue.substring(0, 2)}&type=$initialJokeValue";
                                   allControl.getJoke(url, initialJokeValue);
                                   contex = context;
-                                  // Navigator.push(
-                                  //   context,
-                                  //   MaterialPageRoute(
-                                  //       builder: (context) => JokeResultPage(
-                                  //             mode: initialJokeValue,
-                                  //           )),
-                                  // );
                                 },
                                 child: const Text("Generate Joke")),
                           ]),

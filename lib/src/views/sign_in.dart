@@ -1,7 +1,6 @@
 import '../constants/object_constants.dart';
+import '../services/helpers/sign_in_operation.dart';
 import 'home.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
 import '../constants/string_constants.dart';
@@ -138,16 +137,11 @@ class _SignInState extends State<SignIn> {
                     child: ElevatedButton(
                       // style: ElevatedButton.styleFrom(
                       //     backgroundColor: Color.fromARGB(255, 247, 168, 65)),
-                      onPressed: () {
-                        signInOperation();
-
-                        if (homePassing) {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const Home()),
-                          );
-                        }
+                      onPressed: () async {
+                        contex = context;
+                        homePassing = await signInOperation(
+                            usernameController.text, passwordController.text);
+                        toStayOrNot();
                       },
                       child: const Text(
                         "S I G N  I N",
@@ -205,30 +199,12 @@ class _SignInState extends State<SignIn> {
     );
   }
 
-  Future signInOperation() async {
-    if (usernameController.text == "" || passwordController.text == "") {
-      ScaffoldMessenger.of(context)
-          .showSnackBar(const SnackBar(content: Text("E M P T Y   F I E L D")));
-    } else {
-      try {
-        await FirebaseAuth.instance.signInWithEmailAndPassword(
-          email: usernameController.text.trim(),
-          password: passwordController.text.trim(),
-        );
-        final storageRef = FirebaseStorage.instance.ref();
-        final imageUrl = await storageRef.child(emailAllTime).getDownloadURL();
-        img = NetworkImage(imageUrl);
-        homePassing = true;
-      } on FirebaseAuthException catch (e) {
-        late String str;
-        if (e.toString().contains('password')) {
-          str = "I N V A L I D    P A S S W O R D";
-        } else {
-          str = "I N V A L I D    E M A I L";
-        }
-        ScaffoldMessenger.of(context)
-            .showSnackBar(SnackBar(content: Text(str)));
-      }
+  void toStayOrNot() {
+    if (homePassing) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => const Home()),
+      );
     }
   }
 }
