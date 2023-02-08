@@ -1,5 +1,8 @@
-// Title
+// Application Info
 String flutterTitle = 'Flutter Template';
+String appVersion = '1.0.0';
+String appLegalese = 'Copyright © 2023';
+bool isEmailVerified = false;
 
 // Fonts
 String fontFamilyInApp = 'Poppins';

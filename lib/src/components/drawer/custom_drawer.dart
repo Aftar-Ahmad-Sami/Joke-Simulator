@@ -1,14 +1,13 @@
-
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:demo_project/src/components/appbar/app_bar_helpers.dart';
+import 'package:demo_project/src/components/drawer/drawer_helpers.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/string_constants.dart';
-import '../views/profile_screen.dart';
-import '../views/sign_in.dart';
-import 'circular_avatar_pic.dart';
+import '../../constants/object_constants.dart';
+import '../../constants/string_constants.dart';
+import '../circular_avatar_pic.dart';
 
-class CustomJokeDrawer extends StatelessWidget {
-  const CustomJokeDrawer({super.key});
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,34 +33,27 @@ class CustomJokeDrawer extends StatelessWidget {
           ListTile(
             title: const Text("Profile"),
             onTap: () {
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const ProfileScreen()),
-              );
+              contex = context;
+              profileTile();
             },
           ),
           ListTile(
             title: const Text("Log Out"),
             onTap: () {
-              FirebaseAuth.instance.signOut();
-              Navigator.pop(context);
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const SignIn()),
-              );
+              contex = context;
+              logOutButton();
             },
           ),
-          const AboutListTile(
-            icon: Icon(
+          AboutListTile(
+            icon: const Icon(
               Icons.info,
             ),
-            applicationIcon:
-                Icon(Icons.add_reaction, color: Color(0xff218150), size: 50),
-            applicationName: 'Joke Simulator',
-            applicationVersion: '1.0.0',
-            applicationLegalese: 'Copyright © 2023',
-            child: Text("About Joke Simulator"),
+            applicationIcon: const Icon(Icons.add_reaction,
+                color: Color(0xff218150), size: 50),
+            applicationName: flutterTitle,
+            applicationVersion: appVersion,
+            applicationLegalese: appLegalese,
+            child: Text("About $flutterTitle"),
           ),
         ],
       ),

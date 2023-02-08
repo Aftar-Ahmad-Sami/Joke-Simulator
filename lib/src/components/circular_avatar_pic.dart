@@ -1,4 +1,3 @@
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +32,6 @@ class _AvatarPicState extends State<AvatarPic> {
     return CircleAvatar(
       radius: widget.size,
       backgroundImage: img,
-      //NetworkImage(userImage),
     );
   }
 }

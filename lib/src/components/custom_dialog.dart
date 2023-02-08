@@ -22,10 +22,6 @@ class CustomDialog {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: const [
-//                   SpinKitRotatingCircle(
-//                     color: Color.fromARGB(255, 7, 106, 255),
-// //  size: 50.0,
-//                   ),
                   SpinKitWave(
                     color: Color.fromARGB(255, 7, 106, 255),
                     size: 40,

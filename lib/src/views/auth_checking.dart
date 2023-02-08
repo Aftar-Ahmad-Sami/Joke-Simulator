@@ -1,3 +1,7 @@
+import 'package:demo_project/src/constants/string_constants.dart';
+
+import 'email_verification.dart';
+
 import '../components/custom_circular_progress.dart';
 import 'error_pages/connection_error.dart';
 import 'home.dart';
@@ -15,6 +19,8 @@ class AuthChecking extends StatelessWidget {
           stream: FirebaseAuth.instance.authStateChanges(),
           builder: (context, snapshot) {
             if (snapshot.hasData) {
+              isEmailVerified = false;
+              // return const VerifyEmailPage();
               return const Home();
             } else if (snapshot.connectionState == ConnectionState.waiting) {
               return const Center(child: CustomCircularProgress());

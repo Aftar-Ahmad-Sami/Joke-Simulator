@@ -1,3 +1,5 @@
+import 'package:demo_project/src/views/forgot_password.dart';
+
 import '../constants/object_constants.dart';
 import '../services/helpers/sign_in_operation.dart';
 import 'home.dart';
@@ -44,12 +46,12 @@ class _SignInState extends State<SignIn> {
           children: [
             SizedBox(
                 width: double.infinity,
-                height: screenHeight * 0.55,
+                height: screenHeight * 0.54,
                 child: Image.asset(signInBackground, fit: BoxFit.cover)),
             Container(
               margin: EdgeInsets.only(top: screenHeight * 0.5),
               padding: const EdgeInsets.all(25),
-              height: screenHeight * 0.55,
+              height: screenHeight * 0.6,
               width: double.infinity,
               decoration: const BoxDecoration(
                   color: Colors.white,
@@ -151,7 +153,30 @@ class _SignInState extends State<SignIn> {
                     ),
                   ),
                   const SizedBox(
-                    height: 30,
+                    height: 15,
+                  ),
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: InkWell(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ForgotPasswordPage()),
+                        );
+                      },
+                      child: Text(
+                        "Forgot Password",
+                        style: TextStyle(
+                            fontSize: 12,
+                            fontFamily: fontFamilyInApp,
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
                   ),
                   Container(
                     width: screenWidth,

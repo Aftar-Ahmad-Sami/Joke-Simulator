@@ -6,15 +6,6 @@ successSnackBar() {
         padding: const EdgeInsets.all(16),
         height: 90,
         decoration: BoxDecoration(
-          //border: Border.all(color: Colors.black, width: 3),
-          // gradient: LinearGradient(
-          //   colors: [Color(0xffffe465), Colors.amberAccent],
-          //   begin: Alignment.bottomLeft,
-          //   end: Alignment.topRight,
-          //   stops: [0.4, 0.7],
-          //   tileMode: TileMode.repeated,
-          // ),
-          //color: const Color(0xffffe06b),
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
         ),
@@ -62,21 +53,11 @@ successSnackBar() {
 }
 
 signInErrorSnackBar(String message) {
-  // print(message);
   return SnackBar(
     content: Container(
         padding: const EdgeInsets.all(16),
         height: 90,
         decoration: BoxDecoration(
-          //border: Border.all(color: Colors.black, width: 3),
-          // gradient: LinearGradient(
-          //   colors: [Color(0xffffe465), Colors.amberAccent],
-          //   begin: Alignment.bottomLeft,
-          //   end: Alignment.topRight,
-          //   stops: [0.4, 0.7],
-          //   tileMode: TileMode.repeated,
-          // ),
-          //color: const Color(0xffffe06b),
           color: const Color.fromARGB(255, 221, 74, 74),
           borderRadius: BorderRadius.circular(20),
         ),
