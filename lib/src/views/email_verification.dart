@@ -16,7 +16,6 @@ class VerifyEmailPage extends StatefulWidget {
 class _VerifyEmailPageState extends State<VerifyEmailPage> {
   @override
   void initState() {
-    //checkEmailVerification();
     super.initState();
   }
 

@@ -35,10 +35,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   Widget build(BuildContext context) {
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
-// Image.asset(
-//               'assets/images/xw.gif',
-//               height: 150,
-//             )
+
     return WillPopScope(
       onWillPop: () async {
         return true;
@@ -60,17 +57,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             onPressed: () {
               Navigator.pop(context);
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(builder: (context) => Home()),
-              // );
             },
           ),
           elevation: 5,
           actions: [
             IconButton(
                 onPressed: () {
-                  // Navigator.pop(context);
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

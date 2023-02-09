@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 
 import '../../constants/object_constants.dart';
 import '../../constants/string_constants.dart';
+import 'snack_bar_operation.dart';
 
 Future signInOperation(
     String usernameController, String passwordController) async {
   if (usernameController == "" || passwordController == "") {
-    ScaffoldMessenger.of(contex)
-        .showSnackBar(const SnackBar(content: Text("E M P T Y   F I E L D")));
+    snackBarOperation(text: "E M P T Y   F I E L D");
   } else {
     try {
       await FirebaseAuth.instance.signInWithEmailAndPassword(
@@ -27,7 +27,7 @@ Future signInOperation(
       } else {
         str = "I N V A L I D    E M A I L";
       }
-      ScaffoldMessenger.of(contex).showSnackBar(SnackBar(content: Text(str)));
+      snackBarOperation(text: str);
     }
   }
 }

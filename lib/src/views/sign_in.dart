@@ -137,12 +137,14 @@ class _SignInState extends State<SignIn> {
                     height: 50,
                     width: double.infinity,
                     child: ElevatedButton(
-                      // style: ElevatedButton.styleFrom(
-                      //     backgroundColor: Color.fromARGB(255, 247, 168, 65)),
                       onPressed: () async {
                         contex = context;
-                        homePassing = await signInOperation(
+
+                        var x = await signInOperation(
                             usernameController.text, passwordController.text);
+                        if (x == null) {
+                          homePassing = false;
+                        }
                         toStayOrNot();
                       },
                       child: const Text(
