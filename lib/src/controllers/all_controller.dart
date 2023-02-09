@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -74,11 +72,13 @@ class AllController {
           };
           await temp.set(json);
           await FirebaseAuth.instance.currentUser!.sendEmailVerification();
-          Navigator.pop(contex);
-          Navigator.pushReplacement(
-            contex,
-            MaterialPageRoute(builder: (context) => const VerifyEmailPage()),
-          );
+          Future.delayed(Duration.zero).then((value) => Navigator.pop(contex));
+          Future.delayed(Duration.zero)
+              .then((value) => Navigator.pushReplacement(
+                    contex,
+                    MaterialPageRoute(
+                        builder: (context) => const VerifyEmailPage()),
+                  ));
         }
       });
     } catch (ex) {
