@@ -1,6 +1,9 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:async';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:demo_project/src/views/email_verification.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -70,9 +73,12 @@ class AllController {
             'bio': ""
           };
           await temp.set(json);
-
-          // ignore: use_build_context_synchronously
+          await FirebaseAuth.instance.currentUser!.sendEmailVerification();
           Navigator.pop(contex);
+          Navigator.pushReplacement(
+            contex,
+            MaterialPageRoute(builder: (context) => const VerifyEmailPage()),
+          );
         }
       });
     } catch (ex) {

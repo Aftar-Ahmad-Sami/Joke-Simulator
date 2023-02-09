@@ -100,16 +100,21 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
                                 await FirebaseAuth.instance
                                     .sendPasswordResetEmail(
                                         email: emailController.text);
-                                ScaffoldMessenger.of(context)
-                                    .showSnackBar(const SnackBar(
-                                  content: Text('Reset password email sent'),
-                                ));
+                                // BuildContext can't be in async function
+                                Future.delayed(Duration.zero).then((value) =>
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(const SnackBar(
+                                      content:
+                                          Text('Reset password email sent'),
+                                    )));
                               } catch (e) {
                                 if (emailController.text == "") {
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(const SnackBar(
-                                    content: Text('E M P T Y   F I E L D'),
-                                  ));
+                                  // BuildContext can't be in async function
+                                  Future.delayed(Duration.zero).then((value) =>
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(const SnackBar(
+                                        content: Text('E M P T Y   F I E L D'),
+                                      )));
                                 } else {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(const SnackBar(

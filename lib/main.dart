@@ -34,7 +34,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: primarySwatchColor,
           visualDensity: VisualDensity.adaptivePlatformDensity,
           fontFamily: fontFamilyInApp),
-      home: const SplashScreen(),
+      home: //VerifyEmailPage()
+          const SplashScreen(),
     );
   }
 }
