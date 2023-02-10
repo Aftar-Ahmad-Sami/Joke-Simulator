@@ -1,10 +1,10 @@
 import 'package:demo_project/src/components/alert_dialog/not_verified_alert_dialog.dart';
-import 'package:demo_project/src/views/sign_in.dart';
+import 'sign_in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../components/alert_dialog/verified_alert_dialog.dart';
-import '../constants/string_constants.dart';
+import '../../components/alert_dialog/verified_alert_dialog.dart';
+import '../../constants/string_constants.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   const VerifyEmailPage({super.key});

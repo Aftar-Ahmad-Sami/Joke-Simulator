@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../views/sign_in.dart';
+import '../../views/auth/sign_in.dart';
 
 class AnimatedOkAlertDialog extends StatefulWidget {
   const AnimatedOkAlertDialog({super.key});

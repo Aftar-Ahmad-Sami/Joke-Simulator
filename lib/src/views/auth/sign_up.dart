@@ -2,7 +2,7 @@ import 'package:demo_project/src/constants/string_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import '../constants/object_constants.dart';
+import '../../constants/object_constants.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

@@ -1,9 +1,10 @@
-import '../components/custom_circular_progress.dart';
-import 'error_pages/connection_error.dart';
-import 'home.dart';
-import 'sign_in.dart';
+import '../../components/custom_circular_progress.dart';
+import '../error_pages/connection_error.dart';
+import '../home.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+
+import 'sign_in.dart';
 
 class AuthChecking extends StatelessWidget {
   const AuthChecking({super.key});

@@ -1,11 +1,10 @@
-import 'package:demo_project/src/views/forgot_password.dart';
-
-import '../constants/object_constants.dart';
-import '../services/helpers/sign_in_operation.dart';
-import 'home.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/string_constants.dart';
+import '../../constants/object_constants.dart';
+import '../../constants/string_constants.dart';
+import '../../services/helpers/sign_in_operation.dart';
+import '../home.dart';
+import 'forgot_password.dart';
 import 'sign_up.dart';
 
 class SignIn extends StatefulWidget {
